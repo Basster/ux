@@ -111,6 +111,16 @@ requires some extra steps.
     react:
         controllers_path: '%kernel.project_dir%/assets/build/react/controllers'
 
+#. Avoid your ``.jsx`` files from being exported publicly:
+
+.. code-block:: yaml
+
+    # config/packages/asset-mapper.yaml
+    framework:
+        asset_mapper:
+                excluded_patterns:
+                    - '*/assets/react/*.jsx'
+
 Also, inside of your ``.jsx`` files, when importing another component, use the
 ``.js`` extension:
 
